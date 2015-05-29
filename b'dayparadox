@@ -1,14 +1,12 @@
 #include<iostream>
 using namespace std;
 int main(){
-	int noOfPeople;
+	int noOfPeople,i;
 	float probability;
+	float x=1;
 	cout<<"enter number of people\n";
 	cin>>noOfPeople;
-	int k = noOfPeople;
-	int i=0;
-	float x=1;
-	for(;i<k;i++){
+	for(i=0;i<noOfPeople;i++){
 		x *= (365 - i)/365.0;
 		cout<<x<<endl;
 	}
