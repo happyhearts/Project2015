@@ -13,7 +13,7 @@ int main(){
 		x *= (365 - i)/365.0;
 		
 	}
-	probability = (1 - x)*100;
+	probability = (1 - x);
 	cout<<"Probability = "<<probability<<endl;	
 
 
@@ -38,7 +38,7 @@ count++;
 
 p=(float)count/1000;
 
-p=p*100;
+
 cout<<"the number of sets out of 1000 which have clashing bdays "<<count;
 
 cout<<"\nthe generated probability is "<<p;
