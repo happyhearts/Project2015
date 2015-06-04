@@ -1,7 +1,7 @@
-# L3cube second round
+# L3cube second round Assignments
 #group id 8
-1)Rajanikant Deshmukh
-2)Rohit Funde
-3)Swapnil Chaudhari
-4)Aparna Popade
+1)Aparna Popade
+2)Rajanikant Deshmukh
+3)Rohit Funde
+4)Swapnil Chaudhari
 
