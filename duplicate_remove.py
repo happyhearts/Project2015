@@ -18,28 +18,34 @@ while(True):
 	if(data.find("\n")==-1):
 		break
 dup.close()				
-dup=open("dup","r")
-i=0
-while True:
-	data=dup.readline()
-	if(data==""):
-		break
-	i+=1
-	temp=data.split(" ")
-	sys.stdout.write(str(i))
-	for j in temp:
-		print "\t"+j
-		
-ch=raw_input("choose option to delete (press n to stop)")		
-if(ch=="n"):
-	exit()
-dup.seek(0)	
 
-for i,line in enumerate(dup):
-	if(i==int(ch)-1):
-		temp=line.split(" ")	
-		for i in range(len(temp)):
-			print str(i+1)+"\t"+temp[i]
-		c=input()
-		os.remove(temp[c-1])
-		break	
+def remove():
+	dup=open("dup","r")
+	i=0
+	while True:
+		data=dup.readline()
+		if(data==""):
+			break
+		i+=1
+		temp=data.split(" ")
+		sys.stdout.write(str(i))
+		for j in temp:
+			print "\t"+j
+		
+	ch=raw_input("choose option to delete (press n to stop)")		
+	if(ch=="n"):
+		exit()
+	dup.seek(0)	
+
+	for i,line in enumerate(dup):
+		if(i==int(ch)-1):
+			temp=line.split(" ")	
+			for i in range(len(temp)-1):
+				print str(i+1)+"\t"+temp[i]
+			c=input()
+			os.remove(temp[c-1])			
+			remove()
+			dup.close()
+			break
+			
+remove()			
