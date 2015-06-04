@@ -1,1 +1,64 @@
+Hostname : recipewithme
+Total hits : 17
+Day wise hits :
+	Date 		Hits
+	14/May/2009 	2
+	17/May/2009 	2
+	18/May/2009 	2
+	16/May/2009 	1
+	15/May/2009 	4
+	19/May/2009 	6
+Responses by server : 
+	Code 	Hits
+	3xx 	0
+	2xx 	9
+	1xx 	0
+	5xx 	0
+	4xx 	8
 
+Hostname : kinneryandrajan
+Total hits : 849
+Day wise hits :
+	Date 		Hits
+	14/May/2009 	130
+	17/May/2009 	127
+	18/May/2009 	75
+	16/May/2009 	99
+	15/May/2009 	210
+	19/May/2009 	208
+Responses by server : 
+	Code 	Hits
+	3xx 	248
+	2xx 	554
+	1xx 	0
+	5xx 	1
+	4xx 	46
+
+Hostname : twibuzz
+Total hits : 1912
+Day wise hits :
+	Date 		Hits
+	14/May/2009 	381
+	17/May/2009 	306
+	18/May/2009 	219
+	16/May/2009 	399
+	15/May/2009 	238
+	19/May/2009 	369
+Responses by server : 
+	Code 	Hits
+	3xx 	106
+	2xx 	1634
+	1xx 	0
+	5xx 	0
+	4xx 	172
+
+User Agent Requests  
+Opera      65
+Exabot     8
+Firefox    516
+Googlebot  726
+Safari     304
+Chrome     200
+Yahoo      442
+MSIE       633
+BrowseX    7

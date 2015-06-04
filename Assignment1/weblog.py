@@ -65,7 +65,7 @@ for line in logfile:
     page = req_url.group(2)
     
     if hostname not in Hosts:
-        host_obj = Host(hostname = hostname, pages={},response = {},day_count = {},referers={})
+        host_obj = Host(hostname = hostname, pages={},responses = {'1xx':0,'2xx':0,'3xx':0, '4xx':0, '5xx':0},day_count = {},referers={})
         Hosts[hostname] = host_obj
         Hosts[hostname].pages[page] = 1
     elif page not in Hosts[hostname].pages:
@@ -77,10 +77,7 @@ for line in logfile:
     # Response code
     response_code = int(match.group(6))
     response_key = str(int(response_code/100))+"xx"
-    if response_key not in Hosts[hostname].responses:
-        Hosts[hostname].responses[response_key] = 1
-    else:
-        Hosts[hostname].response[response_key] += 1
+    Hosts[hostname].responses[response_key] += 1
     
     
     # Date
@@ -111,8 +108,24 @@ for line in logfile:
             else:
                 UAs[ua]['count'] += 1
             UAs[ua]['details'] = user_agent
-            
+
+
 for host in Hosts:
-    print Hosts[host]
+    print "Hostname :",host
+    print "Total hits :",sum(Hosts[host].pages.values())
+    
+    print "Day wise hits :"
+    print "\t","Date",'\t\t', "Hits"
+    for day in Hosts[host].day_count:
+        print "\t",day,"\t", Hosts[host].day_count[day]
+    print "Responses by server : "
+    print "\t","Code","\t","Hits"
+    for response_key in Hosts[host].responses:
+        print "\t",response_key,"\t",Hosts[host].responses[response_key]
+    print
+
+print "User Agent".ljust(10),"Requests".ljust(10)
 for ua in UAs:
-    print UAs[ua]
+    print ua.ljust(10),UAs[ua]['count']
+
+
